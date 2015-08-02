@@ -5713,6 +5713,12 @@ namespace FinPersonales {
             
             private global::System.Data.DataColumn columnEstado;
             
+            private global::System.Data.DataColumn columnApellido;
+            
+            private global::System.Data.DataColumn columnTelefono;
+            
+            private global::System.Data.DataColumn columnfotoPerfil;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DetalleUsuariosDataTable() {
@@ -5788,6 +5794,30 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApellidoColumn {
+                get {
+                    return this.columnApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TelefonoColumn {
+                get {
+                    return this.columnTelefono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fotoPerfilColumn {
+                get {
+                    return this.columnfotoPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5823,14 +5853,17 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleUsuariosRow AddDetalleUsuariosRow(aspnet_UsersRow parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users, string Nombre, int LimiteEgresos, TipoPersonaRow parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona, bool Estado) {
+            public DetalleUsuariosRow AddDetalleUsuariosRow(aspnet_UsersRow parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users, string Nombre, int LimiteEgresos, TipoPersonaRow parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona, bool Estado, string Apellido, string Telefono, byte[] fotoPerfil) {
                 DetalleUsuariosRow rowDetalleUsuariosRow = ((DetalleUsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
                         LimiteEgresos,
                         null,
-                        Estado};
+                        Estado,
+                        Apellido,
+                        Telefono,
+                        fotoPerfil};
                 if ((parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users != null)) {
                     columnValuesArray[0] = parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users[1];
                 }
@@ -5864,6 +5897,9 @@ namespace FinPersonales {
                 this.columnLimiteEgresos = base.Columns["LimiteEgresos"];
                 this.columnTipoPersona = base.Columns["TipoPersona"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnApellido = base.Columns["Apellido"];
+                this.columnTelefono = base.Columns["Telefono"];
+                this.columnfotoPerfil = base.Columns["fotoPerfil"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5879,7 +5915,15 @@ namespace FinPersonales {
                 base.Columns.Add(this.columnTipoPersona);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido);
+                this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefono);
+                this.columnfotoPerfil = new global::System.Data.DataColumn("fotoPerfil", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfotoPerfil);
                 this.columnNombre.MaxLength = 100;
+                this.columnApellido.MaxLength = 50;
+                this.columnTelefono.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11211,6 +11255,54 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Apellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalleUsuarios.ApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Apellido\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.ApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Telefono {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalleUsuarios.TelefonoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefono\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.TelefonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] fotoPerfil {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableDetalleUsuarios.fotoPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fotoPerfil\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.fotoPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public aspnet_UsersRow aspnet_UsersRow {
                 get {
                     return ((aspnet_UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK_DetalleUsuarios_aspnet_Users"])));
@@ -11289,6 +11381,42 @@ namespace FinPersonales {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableDetalleUsuarios.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApellidoNull() {
+                return this.IsNull(this.tableDetalleUsuarios.ApellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApellidoNull() {
+                this[this.tableDetalleUsuarios.ApellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefonoNull() {
+                return this.IsNull(this.tableDetalleUsuarios.TelefonoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefonoNull() {
+                this[this.tableDetalleUsuarios.TelefonoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfotoPerfilNull() {
+                return this.IsNull(this.tableDetalleUsuarios.fotoPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfotoPerfilNull() {
+                this[this.tableDetalleUsuarios.fotoPerfilColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19185,17 +19313,24 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("LimiteEgresos", "LimiteEgresos");
             tableMapping.ColumnMappings.Add("TipoPersona", "TipoPersona");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido");
+            tableMapping.ColumnMappings.Add("Telefono", "Telefono");
+            tableMapping.ColumnMappings.Add("fotoPerfil", "fotoPerfil");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DetalleUsuarios] ([Id], [Nombre], [LimiteEgresos], [TipoPerson" +
-                "a], [Estado]) VALUES (@Id, @Nombre, @LimiteEgresos, @TipoPersona, @Estado)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [DetalleUsuarios] ([Id], [Nombre], [LimiteEgresos], [TipoPersona], [E" +
+                "stado], [Apellido], [Telefono], [fotoPerfil]) VALUES (@Id, @Nombre, @LimiteEgres" +
+                "os, @TipoPersona, @Estado, @Apellido, @Telefono, @fotoPerfil)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LimiteEgresos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LimiteEgresos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoPersona", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoPersona", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fotoPerfil", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fotoPerfil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19211,7 +19346,8 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nombre, LimiteEgresos, TipoPersona, Estado FROM dbo.DetalleUsuarios";
+            this._commandCollection[0].CommandText = "SELECT Id, Nombre, LimiteEgresos, TipoPersona, Estado, Apellido, Telefono, fotoPe" +
+                "rfil FROM DetalleUsuarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19272,7 +19408,7 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.Guid> Id, string Nombre, global::System.Nullable<int> LimiteEgresos, global::System.Nullable<int> TipoPersona, global::System.Nullable<bool> Estado) {
+        public virtual int Insert(global::System.Nullable<global::System.Guid> Id, string Nombre, global::System.Nullable<int> LimiteEgresos, global::System.Nullable<int> TipoPersona, global::System.Nullable<bool> Estado, string Apellido, string Telefono, byte[] fotoPerfil) {
             if ((Id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(Id.Value));
             }
@@ -19302,6 +19438,24 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Apellido == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Apellido));
+            }
+            if ((Telefono == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Telefono));
+            }
+            if ((fotoPerfil == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((byte[])(fotoPerfil));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
