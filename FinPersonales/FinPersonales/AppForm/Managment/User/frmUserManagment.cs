@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FinPersonales.AppData.FinPersonalesDataSetTableAdapters;
+using System.Web.Security;
 
 namespace FinPersonales
 {
@@ -69,10 +70,60 @@ namespace FinPersonales
 
         private void aspnet_UsersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnListUser_Click(object sender, EventArgs e)
+        {
             frmListUser frmListUserI = new frmListUser();
             DialogResult result = frmListUserI.ShowDialog();
-            Refresh(result);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("¿Estás seguro que deseas borrar los usuarios seleccionados?",
+                                     "Cuadro de Confirmación",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow Row in aspnet_UsersDataGridView.Rows)
+                {
+                    if (Row.Selected)
+                    {
+                        String username = Row.Cells[2].Value.ToString();
+                        Guid guid = getGuid(username);
+                        detalleUsuariosTableAdapter.DeleteSingle(guid);
+                        aspnet_UsersDataGridView.Rows.RemoveAt(Row.Index);
+                        Membership.DeleteUser(username);
+                        DeleteUserRoles(username);
+                    }
+
+                }
+
+                this.Validate();
+                this.detalleUsuariosBindingSource.EndEdit();
+                this.aspnetMembershipBindingSource.EndEdit();
+                this.aspnet_UsersBindingSource.EndEdit();
+                aspnet_UsersDataGridView.Update();
+                aspnet_UsersDataGridView.Refresh();
+                // this.tableAdapterManager.UpdateAll(this.finPersonalesDataSet);
+            }
+
+
+        }
+        private Guid getGuid(String username)
+        {
+            MembershipUser user = Membership.GetUser(username);
+            Guid userId = (Guid)((user.ProviderUserKey));
+
+            return userId;
+        }
+        void DeleteUserRoles(string username)
+        {
+            foreach (var role in Roles.GetRolesForUser(username))
+                Roles.RemoveUserFromRole(username, role);
+        }
+
 
     }
 }
