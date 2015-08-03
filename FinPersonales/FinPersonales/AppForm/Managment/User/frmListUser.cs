@@ -66,5 +66,13 @@ namespace FinPersonales
             fotoPerfilPictureBox.Refresh();
         }
 
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePasswordI = new frmChangePassword(userNameTextBox.Text);
+            frmChangePasswordI.ShowDialog();
+            this.aspnet_MembershipTableAdapter.Fill(this.finPersonalesDataSet.aspnet_Membership);
+         
+        }
+
     }
 }

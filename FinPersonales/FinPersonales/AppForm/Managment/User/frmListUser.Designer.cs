@@ -88,6 +88,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPanelDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPassword = new System.Windows.Forms.Button();
             userIdLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             lastActivityDateLabel = new System.Windows.Forms.Label();
@@ -253,11 +254,11 @@
             // fotoPerfilLabel
             // 
             fotoPerfilLabel.AutoSize = true;
-            fotoPerfilLabel.Location = new System.Drawing.Point(83, 139);
+            fotoPerfilLabel.Location = new System.Drawing.Point(68, 134);
             fotoPerfilLabel.Name = "fotoPerfilLabel";
-            fotoPerfilLabel.Size = new System.Drawing.Size(54, 13);
+            fotoPerfilLabel.Size = new System.Drawing.Size(83, 13);
             fotoPerfilLabel.TabIndex = 71;
-            fotoPerfilLabel.Text = "foto Perfil:";
+            fotoPerfilLabel.Text = "Imagen de Perfil";
             // 
             // finPersonalesDataSet
             // 
@@ -668,11 +669,22 @@
             this.label1.Text = "Detalles Personales";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnPassword
+            // 
+            this.btnPassword.Location = new System.Drawing.Point(725, 17);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(90, 38);
+            this.btnPassword.TabIndex = 77;
+            this.btnPassword.Text = "Cambiar Contraseña";
+            this.btnPassword.UseVisualStyleBackColor = true;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
+            // 
             // frmListUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 465);
+            this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPanelDescription);
             this.Controls.Add(this.panel1);
@@ -741,6 +753,7 @@
         private System.Windows.Forms.Label lblPanelDescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPassword;
 
 
     }
