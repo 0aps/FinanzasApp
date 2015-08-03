@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace FinPersonales {
+namespace FinPersonales.AppData {
     
     
     /// <summary>
@@ -74,11 +74,7 @@ namespace FinPersonales {
         
         private UsuarioCuentasDataTable tableUsuarioCuentas;
         
-        private global::System.Data.DataRelation relationFK__aspnet_Me__Appli__5629CD9C;
-        
         private global::System.Data.DataRelation relationFK__aspnet_Me__UserI__571DF1D5;
-        
-        private global::System.Data.DataRelation relationFK__aspnet_Pa__Appli__07C12930;
         
         private global::System.Data.DataRelation relationFK__aspnet_Pe__PathI__0D7A0286;
         
@@ -87,10 +83,6 @@ namespace FinPersonales {
         private global::System.Data.DataRelation relationFK__aspnet_Pe__UserI__123EB7A3;
         
         private global::System.Data.DataRelation relationFK__aspnet_Pr__UserI__6B24EA82;
-        
-        private global::System.Data.DataRelation relationFK__aspnet_Ro__Appli__74AE54BC;
-        
-        private global::System.Data.DataRelation relationFK__aspnet_Us__Appli__45F365D3;
         
         private global::System.Data.DataRelation relationFK__aspnet_Us__RoleI__797309D9;
         
@@ -119,6 +111,14 @@ namespace FinPersonales {
         private global::System.Data.DataRelation relationFK_UsuarioCuentas_aspnet_Users;
         
         private global::System.Data.DataRelation relationFK_UsuarioCuentas_Cuentas;
+        
+        private global::System.Data.DataRelation relationFK__aspnet_Ro__Appli__74AE54BC;
+        
+        private global::System.Data.DataRelation relationFK__aspnet_Us__Appli__45F365D3;
+        
+        private global::System.Data.DataRelation relationFK__aspnet_Me__Appli__5629CD9C;
+        
+        private global::System.Data.DataRelation relationFK__aspnet_Pa__Appli__07C12930;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -816,15 +816,11 @@ namespace FinPersonales {
                     this.tableUsuarioCuentas.InitVars();
                 }
             }
-            this.relationFK__aspnet_Me__Appli__5629CD9C = this.Relations["FK__aspnet_Me__Appli__5629CD9C"];
             this.relationFK__aspnet_Me__UserI__571DF1D5 = this.Relations["FK__aspnet_Me__UserI__571DF1D5"];
-            this.relationFK__aspnet_Pa__Appli__07C12930 = this.Relations["FK__aspnet_Pa__Appli__07C12930"];
             this.relationFK__aspnet_Pe__PathI__0D7A0286 = this.Relations["FK__aspnet_Pe__PathI__0D7A0286"];
             this.relationFK__aspnet_Pe__PathI__114A936A = this.Relations["FK__aspnet_Pe__PathI__114A936A"];
             this.relationFK__aspnet_Pe__UserI__123EB7A3 = this.Relations["FK__aspnet_Pe__UserI__123EB7A3"];
             this.relationFK__aspnet_Pr__UserI__6B24EA82 = this.Relations["FK__aspnet_Pr__UserI__6B24EA82"];
-            this.relationFK__aspnet_Ro__Appli__74AE54BC = this.Relations["FK__aspnet_Ro__Appli__74AE54BC"];
-            this.relationFK__aspnet_Us__Appli__45F365D3 = this.Relations["FK__aspnet_Us__Appli__45F365D3"];
             this.relationFK__aspnet_Us__RoleI__797309D9 = this.Relations["FK__aspnet_Us__RoleI__797309D9"];
             this.relationFK__aspnet_Us__UserI__787EE5A0 = this.Relations["FK__aspnet_Us__UserI__787EE5A0"];
             this.relationFK_DetalleUsuarios_aspnet_Users = this.Relations["FK_DetalleUsuarios_aspnet_Users"];
@@ -839,6 +835,10 @@ namespace FinPersonales {
             this.relationFK_Transacciones_TipoTransaccion = this.Relations["FK_Transacciones_TipoTransaccion"];
             this.relationFK_UsuarioCuentas_aspnet_Users = this.Relations["FK_UsuarioCuentas_aspnet_Users"];
             this.relationFK_UsuarioCuentas_Cuentas = this.Relations["FK_UsuarioCuentas_Cuentas"];
+            this.relationFK__aspnet_Ro__Appli__74AE54BC = this.Relations["FK__aspnet_Ro__Appli__74AE54BC"];
+            this.relationFK__aspnet_Us__Appli__45F365D3 = this.Relations["FK__aspnet_Us__Appli__45F365D3"];
+            this.relationFK__aspnet_Me__Appli__5629CD9C = this.Relations["FK__aspnet_Me__Appli__5629CD9C"];
+            this.relationFK__aspnet_Pa__Appli__07C12930 = this.Relations["FK__aspnet_Pa__Appli__07C12930"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -899,18 +899,10 @@ namespace FinPersonales {
             base.Tables.Add(this.tableTransacciones);
             this.tableUsuarioCuentas = new UsuarioCuentasDataTable();
             base.Tables.Add(this.tableUsuarioCuentas);
-            this.relationFK__aspnet_Me__Appli__5629CD9C = new global::System.Data.DataRelation("FK__aspnet_Me__Appli__5629CD9C", new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Membership.ApplicationIdColumn}, false);
-            this.Relations.Add(this.relationFK__aspnet_Me__Appli__5629CD9C);
             this.relationFK__aspnet_Me__UserI__571DF1D5 = new global::System.Data.DataRelation("FK__aspnet_Me__UserI__571DF1D5", new global::System.Data.DataColumn[] {
                         this.tableaspnet_Users.UserIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableaspnet_Membership.UserIdColumn}, false);
             this.Relations.Add(this.relationFK__aspnet_Me__UserI__571DF1D5);
-            this.relationFK__aspnet_Pa__Appli__07C12930 = new global::System.Data.DataRelation("FK__aspnet_Pa__Appli__07C12930", new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Paths.ApplicationIdColumn}, false);
-            this.Relations.Add(this.relationFK__aspnet_Pa__Appli__07C12930);
             this.relationFK__aspnet_Pe__PathI__0D7A0286 = new global::System.Data.DataRelation("FK__aspnet_Pe__PathI__0D7A0286", new global::System.Data.DataColumn[] {
                         this.tableaspnet_Paths.PathIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableaspnet_PersonalizationAllUsers.PathIdColumn}, false);
@@ -927,14 +919,6 @@ namespace FinPersonales {
                         this.tableaspnet_Users.UserIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableaspnet_Profile.UserIdColumn}, false);
             this.Relations.Add(this.relationFK__aspnet_Pr__UserI__6B24EA82);
-            this.relationFK__aspnet_Ro__Appli__74AE54BC = new global::System.Data.DataRelation("FK__aspnet_Ro__Appli__74AE54BC", new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Roles.ApplicationIdColumn}, false);
-            this.Relations.Add(this.relationFK__aspnet_Ro__Appli__74AE54BC);
-            this.relationFK__aspnet_Us__Appli__45F365D3 = new global::System.Data.DataRelation("FK__aspnet_Us__Appli__45F365D3", new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableaspnet_Users.ApplicationIdColumn}, false);
-            this.Relations.Add(this.relationFK__aspnet_Us__Appli__45F365D3);
             this.relationFK__aspnet_Us__RoleI__797309D9 = new global::System.Data.DataRelation("FK__aspnet_Us__RoleI__797309D9", new global::System.Data.DataColumn[] {
                         this.tableaspnet_Roles.RoleIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableaspnet_UsersInRoles.RoleIdColumn}, false);
@@ -991,6 +975,22 @@ namespace FinPersonales {
                         this.tableCuentas.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsuarioCuentas.idCuentaColumn}, false);
             this.Relations.Add(this.relationFK_UsuarioCuentas_Cuentas);
+            this.relationFK__aspnet_Ro__Appli__74AE54BC = new global::System.Data.DataRelation("FK__aspnet_Ro__Appli__74AE54BC", new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Roles.ApplicationIdColumn}, false);
+            this.Relations.Add(this.relationFK__aspnet_Ro__Appli__74AE54BC);
+            this.relationFK__aspnet_Us__Appli__45F365D3 = new global::System.Data.DataRelation("FK__aspnet_Us__Appli__45F365D3", new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Users.ApplicationIdColumn}, false);
+            this.Relations.Add(this.relationFK__aspnet_Us__Appli__45F365D3);
+            this.relationFK__aspnet_Me__Appli__5629CD9C = new global::System.Data.DataRelation("FK__aspnet_Me__Appli__5629CD9C", new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Membership.ApplicationIdColumn}, false);
+            this.Relations.Add(this.relationFK__aspnet_Me__Appli__5629CD9C);
+            this.relationFK__aspnet_Pa__Appli__07C12930 = new global::System.Data.DataRelation("FK__aspnet_Pa__Appli__07C12930", new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Applications.ApplicationIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableaspnet_Paths.ApplicationIdColumn}, false);
+            this.Relations.Add(this.relationFK__aspnet_Pa__Appli__07C12930);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5707,11 +5707,17 @@ namespace FinPersonales {
             
             private global::System.Data.DataColumn columnNombre;
             
+            private global::System.Data.DataColumn columnApellido;
+            
+            private global::System.Data.DataColumn columnTelefono;
+            
             private global::System.Data.DataColumn columnLimiteEgresos;
             
             private global::System.Data.DataColumn columnTipoPersona;
             
             private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnfotoPerfil;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5764,6 +5770,22 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApellidoColumn {
+                get {
+                    return this.columnApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TelefonoColumn {
+                get {
+                    return this.columnTelefono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LimiteEgresosColumn {
                 get {
                     return this.columnLimiteEgresos;
@@ -5783,6 +5805,14 @@ namespace FinPersonales {
             public global::System.Data.DataColumn EstadoColumn {
                 get {
                     return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fotoPerfilColumn {
+                get {
+                    return this.columnfotoPerfil;
                 }
             }
             
@@ -5823,19 +5853,22 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleUsuariosRow AddDetalleUsuariosRow(aspnet_UsersRow parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users, string Nombre, int LimiteEgresos, TipoPersonaRow parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona, bool Estado) {
+            public DetalleUsuariosRow AddDetalleUsuariosRow(aspnet_UsersRow parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users, string Nombre, string Apellido, string Telefono, int LimiteEgresos, TipoPersonaRow parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona, bool Estado, byte[] fotoPerfil) {
                 DetalleUsuariosRow rowDetalleUsuariosRow = ((DetalleUsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
+                        Apellido,
+                        Telefono,
                         LimiteEgresos,
                         null,
-                        Estado};
+                        Estado,
+                        fotoPerfil};
                 if ((parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users != null)) {
                     columnValuesArray[0] = parentaspnet_UsersRowByFK_DetalleUsuarios_aspnet_Users[1];
                 }
                 if ((parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona != null)) {
-                    columnValuesArray[3] = parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona[0];
+                    columnValuesArray[5] = parentTipoPersonaRowByFK_DetalleUsuarios_TipoPersona[0];
                 }
                 rowDetalleUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetalleUsuariosRow);
@@ -5861,9 +5894,12 @@ namespace FinPersonales {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnNombre = base.Columns["Nombre"];
+                this.columnApellido = base.Columns["Apellido"];
+                this.columnTelefono = base.Columns["Telefono"];
                 this.columnLimiteEgresos = base.Columns["LimiteEgresos"];
                 this.columnTipoPersona = base.Columns["TipoPersona"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnfotoPerfil = base.Columns["fotoPerfil"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5873,13 +5909,21 @@ namespace FinPersonales {
                 base.Columns.Add(this.columnId);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
+                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido);
+                this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefono);
                 this.columnLimiteEgresos = new global::System.Data.DataColumn("LimiteEgresos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLimiteEgresos);
                 this.columnTipoPersona = new global::System.Data.DataColumn("TipoPersona", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipoPersona);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnfotoPerfil = new global::System.Data.DataColumn("fotoPerfil", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfotoPerfil);
                 this.columnNombre.MaxLength = 100;
+                this.columnApellido.MaxLength = 50;
+                this.columnTelefono.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9430,28 +9474,6 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aspnet_MembershipRow[] Getaspnet_MembershipRows() {
-                if ((this.Table.ChildRelations["FK__aspnet_Me__Appli__5629CD9C"] == null)) {
-                    return new aspnet_MembershipRow[0];
-                }
-                else {
-                    return ((aspnet_MembershipRow[])(base.GetChildRows(this.Table.ChildRelations["FK__aspnet_Me__Appli__5629CD9C"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aspnet_PathsRow[] Getaspnet_PathsRows() {
-                if ((this.Table.ChildRelations["FK__aspnet_Pa__Appli__07C12930"] == null)) {
-                    return new aspnet_PathsRow[0];
-                }
-                else {
-                    return ((aspnet_PathsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__aspnet_Pa__Appli__07C12930"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public aspnet_RolesRow[] Getaspnet_RolesRows() {
                 if ((this.Table.ChildRelations["FK__aspnet_Ro__Appli__74AE54BC"] == null)) {
                     return new aspnet_RolesRow[0];
@@ -9469,6 +9491,28 @@ namespace FinPersonales {
                 }
                 else {
                     return ((aspnet_UsersRow[])(base.GetChildRows(this.Table.ChildRelations["FK__aspnet_Us__Appli__45F365D3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public aspnet_MembershipRow[] Getaspnet_MembershipRows() {
+                if ((this.Table.ChildRelations["FK__aspnet_Me__Appli__5629CD9C"] == null)) {
+                    return new aspnet_MembershipRow[0];
+                }
+                else {
+                    return ((aspnet_MembershipRow[])(base.GetChildRows(this.Table.ChildRelations["FK__aspnet_Me__Appli__5629CD9C"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public aspnet_PathsRow[] Getaspnet_PathsRows() {
+                if ((this.Table.ChildRelations["FK__aspnet_Pa__Appli__07C12930"] == null)) {
+                    return new aspnet_PathsRow[0];
+                }
+                else {
+                    return ((aspnet_PathsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__aspnet_Pa__Appli__07C12930"])));
                 }
             }
         }
@@ -9750,23 +9794,23 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aspnet_ApplicationsRow aspnet_ApplicationsRow {
-                get {
-                    return ((aspnet_ApplicationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__aspnet_Me__Appli__5629CD9C"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__aspnet_Me__Appli__5629CD9C"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public aspnet_UsersRow aspnet_UsersRow {
                 get {
                     return ((aspnet_UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__aspnet_Me__UserI__571DF1D5"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__aspnet_Me__UserI__571DF1D5"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public aspnet_ApplicationsRow aspnet_ApplicationsRow {
+                get {
+                    return ((aspnet_ApplicationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__aspnet_Me__Appli__5629CD9C"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__aspnet_Me__Appli__5629CD9C"]);
                 }
             }
             
@@ -11163,6 +11207,38 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Apellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalleUsuarios.ApellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Apellido\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.ApellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Telefono {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalleUsuarios.TelefonoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefono\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.TelefonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int LimiteEgresos {
                 get {
                     try {
@@ -11206,6 +11282,22 @@ namespace FinPersonales {
                 }
                 set {
                     this[this.tableDetalleUsuarios.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] fotoPerfil {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableDetalleUsuarios.fotoPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fotoPerfil\' in table \'DetalleUsuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleUsuarios.fotoPerfilColumn] = value;
                 }
             }
             
@@ -11257,6 +11349,30 @@ namespace FinPersonales {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApellidoNull() {
+                return this.IsNull(this.tableDetalleUsuarios.ApellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApellidoNull() {
+                this[this.tableDetalleUsuarios.ApellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefonoNull() {
+                return this.IsNull(this.tableDetalleUsuarios.TelefonoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefonoNull() {
+                this[this.tableDetalleUsuarios.TelefonoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLimiteEgresosNull() {
                 return this.IsNull(this.tableDetalleUsuarios.LimiteEgresosColumn);
             }
@@ -11289,6 +11405,18 @@ namespace FinPersonales {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableDetalleUsuarios.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfotoPerfilNull() {
+                return this.IsNull(this.tableDetalleUsuarios.fotoPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfotoPerfilNull() {
+                this[this.tableDetalleUsuarios.fotoPerfilColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13602,7 +13730,7 @@ namespace FinPersonales {
         }
     }
 }
-namespace FinPersonales.FinPersonalesDataSetTableAdapters {
+namespace FinPersonales.AppData.FinPersonalesDataSetTableAdapters {
     
     
     /// <summary>
@@ -19182,20 +19310,27 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             tableMapping.DataSetTable = "DetalleUsuarios";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido");
+            tableMapping.ColumnMappings.Add("Telefono", "Telefono");
             tableMapping.ColumnMappings.Add("LimiteEgresos", "LimiteEgresos");
             tableMapping.ColumnMappings.Add("TipoPersona", "TipoPersona");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("fotoPerfil", "fotoPerfil");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DetalleUsuarios] ([Id], [Nombre], [LimiteEgresos], [TipoPerson" +
-                "a], [Estado]) VALUES (@Id, @Nombre, @LimiteEgresos, @TipoPersona, @Estado)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DetalleUsuarios] ([Id], [Nombre], [Apellido], [Telefono], [Lim" +
+                "iteEgresos], [TipoPersona], [Estado], [fotoPerfil]) VALUES (@Id, @Nombre, @Apell" +
+                "ido, @Telefono, @LimiteEgresos, @TipoPersona, @Estado, @fotoPerfil)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LimiteEgresos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LimiteEgresos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoPersona", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoPersona", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fotoPerfil", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fotoPerfil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19211,7 +19346,8 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nombre, LimiteEgresos, TipoPersona, Estado FROM dbo.DetalleUsuarios";
+            this._commandCollection[0].CommandText = "SELECT Id, Nombre, Apellido, Telefono, LimiteEgresos, TipoPersona, Estado, fotoPe" +
+                "rfil FROM dbo.DetalleUsuarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19272,7 +19408,7 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.Guid> Id, string Nombre, global::System.Nullable<int> LimiteEgresos, global::System.Nullable<int> TipoPersona, global::System.Nullable<bool> Estado) {
+        public virtual int Insert(global::System.Nullable<global::System.Guid> Id, string Nombre, string Apellido, string Telefono, global::System.Nullable<int> LimiteEgresos, global::System.Nullable<int> TipoPersona, global::System.Nullable<bool> Estado, byte[] fotoPerfil) {
             if ((Id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(Id.Value));
             }
@@ -19285,23 +19421,41 @@ SELECT Id, Descripcion, Estado FROM Cuentas WHERE (Id = @Id)";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nombre));
             }
-            if ((LimiteEgresos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(LimiteEgresos.Value));
-            }
-            else {
+            if ((Apellido == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((TipoPersona.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(TipoPersona.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Apellido));
+            }
+            if ((Telefono == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Estado.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Estado.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Telefono));
+            }
+            if ((LimiteEgresos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(LimiteEgresos.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((TipoPersona.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(TipoPersona.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Estado.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Estado.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((fotoPerfil == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((byte[])(fotoPerfil));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

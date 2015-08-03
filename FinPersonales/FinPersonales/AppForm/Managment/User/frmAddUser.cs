@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Web.Security;
 using System.Windows.Forms;
-using FinPersonales.Data;
 using System.IO;
+using FinPersonales.AppData.FinPersonalesDataSetTableAdapters;
 
 namespace FinPersonales
 {
     public partial class frmAddUser : Form
     {
-        private FinPersonalesDataSetTableAdapters.DetalleUsuariosTableAdapter detalleUsuariosTableAdapter;
+        private DetalleUsuariosTableAdapter detalleUsuariosTableAdapter;
         private byte[] bimage;
 
         public frmAddUser()
         {
             InitializeComponent();
-            detalleUsuariosTableAdapter = new FinPersonalesDataSetTableAdapters.DetalleUsuariosTableAdapter();
+            detalleUsuariosTableAdapter = new DetalleUsuariosTableAdapter();
             pictureUser.Image = Properties.Resources.photo;
             
         }
@@ -30,7 +30,7 @@ namespace FinPersonales
             MembershipUser user = Membership.CreateUser(txtUser.Text, txtPassword.Text, txtEmail.Text);
             Guid userId = (Guid)((user.ProviderUserKey));
             int limitOutCome = Int32.Parse(txtLimOutcome.Text);
-            detalleUsuariosTableAdapter.Insert(userId, txtName.Text, limitOutCome, 1, true, txtLastName.Text, txtPhone.Text, bimage);
+            detalleUsuariosTableAdapter.Insert(userId, txtName.Text, txtLastName.Text, txtPhone.Text, limitOutCome, 1, true, bimage);
             txtName.Text = ""; txtEmail.Text = ""; txtUser.Text = ""; txtPassword.Text = "";
             txtLimOutcome.Text = ""; txtPhone.Text = ""; txtLastName.Text = "";
             

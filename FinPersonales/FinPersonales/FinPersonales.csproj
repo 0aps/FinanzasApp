@@ -46,50 +46,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\FinPersonalesDataSet.Designer.cs">
+    <Compile Include="AppData\FinPersonalesDataSet.cs">
+      <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppData\FinPersonalesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\FinPersonalesDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Managment\User\frmAddUser.cs">
+    <Compile Include="AppForm\Managment\User\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Managment\User\frmAddUser.Designer.cs">
+    <Compile Include="AppForm\Managment\User\frmAddUser.Designer.cs">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Managment\User\frmUserManagment.cs">
+    <Compile Include="AppForm\Managment\User\frmUserManagment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Managment\User\frmUserManagment.Designer.cs">
+    <Compile Include="AppForm\Managment\User\frmUserManagment.Designer.cs">
       <DependentUpon>frmUserManagment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Client\frmLogin.cs" />
-    <Compile Include="Form\Client\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Managment\User\frmListUser.cs">
+    <Compile Include="AppForm\Client\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Managment\User\frmListUser.Designer.cs">
+    <Compile Include="AppForm\Client\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\Managment\User\frmListUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Managment\User\frmListUser.Designer.cs">
       <DependentUpon>frmListUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\Managment\User\frmAddUser.resx">
+    <EmbeddedResource Include="AppForm\Managment\User\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Managment\User\frmListUser.resx">
+    <EmbeddedResource Include="AppForm\Managment\User\frmListUser.resx">
       <DependentUpon>frmListUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Managment\User\frmUserManagment.resx">
+    <EmbeddedResource Include="AppForm\Managment\User\frmUserManagment.resx">
       <DependentUpon>frmUserManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Client\frmLogin.resx">
+    <EmbeddedResource Include="AppForm\Client\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -103,15 +104,15 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
-    <None Include="Data\FinPersonalesDataSet.xsc">
+    <None Include="AppData\FinPersonalesDataSet.xsc">
       <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Data\FinPersonalesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
+    <None Include="AppData\FinPersonalesDataSet.xsd">
       <SubType>Designer</SubType>
-      <LastGenOutput>FinPersonalesDataSet1.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinPersonalesDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Data\FinPersonalesDataSet.xss">
+    <None Include="AppData\FinPersonalesDataSet.xss">
       <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -125,7 +126,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\Managment\Role\" />
+    <Folder Include="AppForm\Managment\Role\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
