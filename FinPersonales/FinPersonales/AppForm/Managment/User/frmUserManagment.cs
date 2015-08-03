@@ -70,13 +70,17 @@ namespace FinPersonales
 
         private void aspnet_UsersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int index = aspnet_UsersDataGridView.CurrentCell.RowIndex;
+            frmListUser frmListUserI = new frmListUser(index);
+            DialogResult result = frmListUserI.ShowDialog();
+            Refresh(result);
         }
 
         private void btnListUser_Click(object sender, EventArgs e)
         {
             frmListUser frmListUserI = new frmListUser();
             DialogResult result = frmListUserI.ShowDialog();
+            Refresh(result);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

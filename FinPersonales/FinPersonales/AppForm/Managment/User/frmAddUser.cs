@@ -21,6 +21,7 @@ namespace FinPersonales
         {
             InitializeComponent();
             detalleUsuariosTableAdapter = new DetalleUsuariosTableAdapter();
+            bimage = GetBytesOfImage(Properties.Resources.photo);
             pictureUser.Image = Properties.Resources.photo;
             
         }
@@ -66,6 +67,11 @@ namespace FinPersonales
             this.Close();
         }
 
+        private static byte[] GetBytesOfImage(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
 
 
     }

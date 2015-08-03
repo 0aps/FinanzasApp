@@ -12,9 +12,18 @@ namespace FinPersonales
 {
     public partial class frmListUser : Form
     {
+        private int _index;
+
         public frmListUser()
         {
             InitializeComponent();
+            _index = -1;
+        }
+
+        public frmListUser(int index)
+        {    
+            InitializeComponent();
+            this._index = index;
         }
 
 
@@ -39,6 +48,19 @@ namespace FinPersonales
             // TODO: This line of code loads data into the 'finPersonalesDataSet.aspnet_Users' table. You can move, or remove it, as needed.
             this.aspnet_UsersTableAdapter.Fill(this.finPersonalesDataSet.aspnet_Users);
 
+            if (_index != -1) 
+            {
+                aspnet_UsersBindingNavigator.BindingSource.Position = _index;
+                bindingNavigatorDeleteItem.Enabled = false;
+                bindingNavigatorMoveFirstItem.Enabled = false;
+                bindingNavigatorMoveLastItem.Enabled = false;
+                bindingNavigatorMovePreviousItem.Enabled = false;
+                bindingNavigatorMoveNextItem.Enabled = false;
+                bindingNavigatorPositionItem.Enabled = false;
+               // aspnet_UsersBindingNavigator.Visible = false;
+            }
+            bindingNavigatorDeleteItem.Enabled = false;
+            bindingNavigatorAddNewItem.Enabled = false;
         }
 
         private void fotoPerfilPictureBox_Click(object sender, EventArgs e)

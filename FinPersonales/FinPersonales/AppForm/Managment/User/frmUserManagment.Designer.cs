@@ -281,7 +281,7 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "LastActivityDate";
-            this.dataGridViewTextBoxColumn6.HeaderText = "LastActivityDate";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Última Conexión";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // UserIdL

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUser));
             this.lblAddUser = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,10 +51,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
+            this.pictureUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddUser
@@ -74,7 +73,7 @@
             this.btnCreate.Location = new System.Drawing.Point(415, 470);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(99, 34);
-            this.btnCreate.TabIndex = 8;
+            this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "Crear";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -104,14 +103,14 @@
             this.txtName.Location = new System.Drawing.Point(135, 24);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(143, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 5;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(135, 116);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(192, 20);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 8;
             // 
             // lblName
             // 
@@ -128,7 +127,7 @@
             this.txtUser.Location = new System.Drawing.Point(136, 14);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(187, 20);
-            this.txtUser.TabIndex = 1;
+            this.txtUser.TabIndex = 2;
             // 
             // lblEmail
             // 
@@ -146,20 +145,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(187, 20);
-            this.txtPassword.TabIndex = 2;
-            // 
-            // pictureUser
-            // 
-            this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureUser.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureUser.Image")));
-            this.pictureUser.Location = new System.Drawing.Point(0, 0);
-            this.pictureUser.Name = "pictureUser";
-            this.pictureUser.Size = new System.Drawing.Size(223, 377);
-            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUser.TabIndex = 11;
-            this.pictureUser.TabStop = false;
-            this.pictureUser.Click += new System.EventHandler(this.pictureUser_Click);
+            this.txtPassword.TabIndex = 3;
             // 
             // panel1
             // 
@@ -172,7 +158,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(642, 379);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // label7
             // 
@@ -200,14 +186,14 @@
             this.panel2.Location = new System.Drawing.Point(238, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(381, 203);
-            this.panel2.TabIndex = 12;
+            this.panel2.TabIndex = 4;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(135, 86);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(143, 20);
-            this.txtPhone.TabIndex = 5;
+            this.txtPhone.TabIndex = 7;
             // 
             // lblPhone
             // 
@@ -234,14 +220,14 @@
             this.txtLastName.Location = new System.Drawing.Point(135, 55);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(192, 20);
-            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TabIndex = 6;
             // 
             // txtLimOutcome
             // 
             this.txtLimOutcome.Location = new System.Drawing.Point(135, 150);
             this.txtLimOutcome.Name = "txtLimOutcome";
             this.txtLimOutcome.Size = new System.Drawing.Size(109, 20);
-            this.txtLimOutcome.TabIndex = 7;
+            this.txtLimOutcome.TabIndex = 9;
             // 
             // label1
             // 
@@ -273,7 +259,7 @@
             this.panel3.Location = new System.Drawing.Point(237, 29);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(382, 86);
-            this.panel3.TabIndex = 13;
+            this.panel3.TabIndex = 1;
             // 
             // label3
             // 
@@ -290,10 +276,22 @@
             this.btnCancel.Location = new System.Drawing.Point(533, 470);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 34);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cacelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // pictureUser
+            // 
+            this.pictureUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureUser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureUser.Location = new System.Drawing.Point(0, 0);
+            this.pictureUser.Name = "pictureUser";
+            this.pictureUser.Size = new System.Drawing.Size(223, 377);
+            this.pictureUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureUser.TabIndex = 11;
+            this.pictureUser.TabStop = false;
+            this.pictureUser.Click += new System.EventHandler(this.pictureUser_Click);
             // 
             // frmAddUser
             // 
@@ -307,13 +305,13 @@
             this.Controls.Add(this.btnCreate);
             this.Name = "frmAddUser";
             this.Text = "Gestión de Usuario - Agregar";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
