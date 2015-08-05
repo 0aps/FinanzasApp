@@ -64,12 +64,6 @@ namespace FinPersonales
             this.tipoPersonaTableAdapter.Fill(this.finPersonalesDataSet.TipoPersona);
             Guid userId = userSingleton.getIntance()._Id;
 
-            // TODO: This line of code loads data into the 'finPersonalesDataSet.Cuentas' table. You can move, or remove it, as needed.
-            this.cuentasTableAdapter.Fill(this.finPersonalesDataSet.Cuentas);
-            // TODO: This line of code loads data into the 'finPersonalesDataSet.UsuarioCuentas' table. You can move, or remove it, as needed.
-            this.usuarioCuentasTableAdapter.FillByPerUser(this.finPersonalesDataSet.UsuarioCuentas, userId);
-            // TODO: This line of code loads data into the 'finPersonalesDataSet.DetalleUsuarios' table. You can move, or remove it, as needed.
-            this.detalleUsuariosTableAdapter.Fill(this.finPersonalesDataSet.DetalleUsuarios);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPago' table. You can move, or remove it, as needed.
             this.tipoPagoTableAdapter.Fill(this.finPersonalesDataSet.TipoPago);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.aspnet_Users' table. You can move, or remove it, as needed.
@@ -84,7 +78,7 @@ namespace FinPersonales
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.usuarioCuentasDataGridView.DataSource = null;
+       
             this.transaccionesDataGridView.DataSource = null;
         }
         private void Refresh(DialogResult result)

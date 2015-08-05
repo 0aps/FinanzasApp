@@ -134,7 +134,6 @@
             this.tableAdapterManager.TipoTransaccionTableAdapter = null;
             this.tableAdapterManager.TransaccionesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuarioCuentasTableAdapter = null;
             // 
             // aspnet_UsersInRolesTableAdapter
             // 

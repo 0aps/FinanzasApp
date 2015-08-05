@@ -31,7 +31,7 @@ namespace FinPersonales
             MembershipUser user = Membership.CreateUser(txtUser.Text, txtPassword.Text, txtEmail.Text);
             Guid userId = (Guid)((user.ProviderUserKey));
             int limitOutCome = Int32.Parse(txtLimOutcome.Text);
-            detalleUsuariosTableAdapter.Insert(userId, txtName.Text, txtLastName.Text, txtPhone.Text, limitOutCome, 1, true, bimage);
+            detalleUsuariosTableAdapter.Insert(userId, txtName.Text, txtLastName.Text, txtPhone.Text, limitOutCome, 1, true, bimage, limitOutCome);
             txtName.Text = ""; txtEmail.Text = ""; txtUser.Text = ""; txtPassword.Text = "";
             txtLimOutcome.Text = ""; txtPhone.Text = ""; txtLastName.Text = "";
             
