@@ -18780,11 +18780,17 @@ SELECT Id, Descripcion, Estado, LimiteActual, UserId FROM Cuentas WHERE (Id = @I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Descripcion, Estado, LimiteActual, UserId FROM Cuentas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id, Descripcion, Estado, LimiteActual, UserId\r\nFROM            Cuen" +
+                "tas\r\nWHERE        (UserId = @UserId)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18809,6 +18815,25 @@ SELECT Id, Descripcion, Estado, LimiteActual, UserId FROM Cuentas WHERE (Id = @I
             FinPersonalesDataSet.CuentasDataTable dataTable = new FinPersonalesDataSet.CuentasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPerUser(FinPersonalesDataSet.CuentasDataTable dataTable, global::System.Nullable<global::System.Guid> UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((UserId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(UserId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20876,12 +20901,19 @@ SELECT Id, idUsuario, Año, Mes, FechaCorte, BalanceInicial, TotalIngresos, Tota
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, idUsuario, Año, Mes, FechaCorte, BalanceInicial, TotalIngresos, TotalE" +
                 "gresos, BalanceCorte, Descripción, Estado FROM Servicio";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id, idUsuario, Año, Mes, FechaCorte, BalanceInicial, TotalIngresos," +
+                " TotalEgresos, BalanceCorte, Descripción, Estado\r\nFROM            Servicio\r\nWHER" +
+                "E        (idUsuario = @idUsuario)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20906,6 +20938,25 @@ SELECT Id, idUsuario, Año, Mes, FechaCorte, BalanceInicial, TotalIngresos, Tota
             FinPersonalesDataSet.ServicioDataTable dataTable = new FinPersonalesDataSet.ServicioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPerUser(FinPersonalesDataSet.ServicioDataTable dataTable, global::System.Nullable<global::System.Guid> idUsuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idUsuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(idUsuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

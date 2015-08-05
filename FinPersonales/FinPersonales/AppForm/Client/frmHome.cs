@@ -60,10 +60,15 @@ namespace FinPersonales
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPersona' table. You can move, or remove it, as needed.
-            this.tipoPersonaTableAdapter.Fill(this.finPersonalesDataSet.TipoPersona);
             Guid userId = userSingleton.getIntance()._Id;
 
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.Servicio' table. You can move, or remove it, as needed.
+            this.servicioTableAdapter.FillByPerUser(this.finPersonalesDataSet.Servicio, userId);
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.Cuentas' table. You can move, or remove it, as needed.
+            this.cuentasTableAdapter.FillByPerUser(this.finPersonalesDataSet.Cuentas, userId);
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPersona' table. You can move, or remove it, as needed.
+            this.tipoPersonaTableAdapter.Fill(this.finPersonalesDataSet.TipoPersona);
+            
             // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPago' table. You can move, or remove it, as needed.
             this.tipoPagoTableAdapter.Fill(this.finPersonalesDataSet.TipoPago);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.aspnet_Users' table. You can move, or remove it, as needed.
