@@ -15,7 +15,7 @@ namespace FinPersonales
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUserManagment());
+            Application.Run(new frmRoleManagment());
         }
     }
 }

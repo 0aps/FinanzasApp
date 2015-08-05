@@ -85,8 +85,29 @@
     <Compile Include="AppForm\Managment\User\frmListUser.Designer.cs">
       <DependentUpon>frmListUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\Managment\Role\frmRoleManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Managment\Role\frmRoleManagment.Designer.cs">
+      <DependentUpon>frmRoleManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\Managment\Role\frmAvailableUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Managment\Role\frmAvailableUser.Designer.cs">
+      <DependentUpon>frmAvailableUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\Managment\Role\frmEditRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Managment\Role\frmEditRole.Designer.cs">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForm\Managment\Role\frmRoleManagment.resx">
+      <DependentUpon>frmRoleManagment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForm\Managment\User\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\Client\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\Managment\Role\frmAvailableUser.resx">
+      <DependentUpon>frmAvailableUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\Managment\Role\frmEditRole.resx">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,9 +161,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppForm\Managment\Role\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
   </ItemGroup>
