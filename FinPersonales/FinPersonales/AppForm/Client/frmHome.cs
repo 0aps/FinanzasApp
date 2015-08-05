@@ -34,13 +34,15 @@ namespace FinPersonales
         private void gestiónDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUserManagment frmUserManagmentI = new frmUserManagment();
-            frmUserManagmentI.ShowDialog();
+            DialogResult result = frmUserManagmentI.ShowDialog();
+            Refresh(result);
         }
 
         private void gestiónDeRolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRoleManagment frmRoleManagmentI = new frmRoleManagment();
-            frmRoleManagmentI.ShowDialog();
+            DialogResult result =  frmRoleManagmentI.ShowDialog();
+            Refresh(result);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,14 +60,39 @@ namespace FinPersonales
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPersona' table. You can move, or remove it, as needed.
+            this.tipoPersonaTableAdapter.Fill(this.finPersonalesDataSet.TipoPersona);
+            Guid userId = userSingleton.getIntance()._Id;
+
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.Cuentas' table. You can move, or remove it, as needed.
+            this.cuentasTableAdapter.Fill(this.finPersonalesDataSet.Cuentas);
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.UsuarioCuentas' table. You can move, or remove it, as needed.
+            this.usuarioCuentasTableAdapter.FillByPerUser(this.finPersonalesDataSet.UsuarioCuentas, userId);
+            // TODO: This line of code loads data into the 'finPersonalesDataSet.DetalleUsuarios' table. You can move, or remove it, as needed.
+            this.detalleUsuariosTableAdapter.Fill(this.finPersonalesDataSet.DetalleUsuarios);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoPago' table. You can move, or remove it, as needed.
             this.tipoPagoTableAdapter.Fill(this.finPersonalesDataSet.TipoPago);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.aspnet_Users' table. You can move, or remove it, as needed.
             this.aspnet_UsersTableAdapter.Fill(this.finPersonalesDataSet.aspnet_Users);
             // TODO: This line of code loads data into the 'finPersonalesDataSet.TipoTransaccion' table. You can move, or remove it, as needed.
             this.tipoTransaccionTableAdapter.Fill(this.finPersonalesDataSet.TipoTransaccion);   
-            this.transaccionesTableAdapter.FillByPerUser(this.finPersonalesDataSet.Transacciones, userSingleton.getIntance()._Id);
+            this.transaccionesTableAdapter.FillByPerUser(this.finPersonalesDataSet.Transacciones, userId);
+            this.detalleUsuariosTableAdapter.FillByPerUser(this.finPersonalesDataSet.DetalleUsuarios, userId);
+            this.lblUserName.Text = nombreLabel1.Text;
             
+        }
+
+        private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.usuarioCuentasDataGridView.DataSource = null;
+            this.transaccionesDataGridView.DataSource = null;
+        }
+        private void Refresh(DialogResult result)
+        {
+            if (result == DialogResult.Cancel)
+            {
+                frmHome_Load(null, null);
+            }
         }
 
     }
