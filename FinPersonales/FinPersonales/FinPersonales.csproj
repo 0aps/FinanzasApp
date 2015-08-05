@@ -55,6 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinPersonalesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\Client\userSingleton.cs" />
     <Compile Include="AppForm\Managment\User\frmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +104,12 @@
     <Compile Include="AppForm\Managment\Role\frmEditRole.Designer.cs">
       <DependentUpon>frmEditRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\Client\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Client\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForm\Managment\Role\frmRoleManagment.resx">
@@ -128,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\Managment\Role\frmEditRole.resx">
       <DependentUpon>frmEditRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\Client\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,7 +171,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
   </ItemGroup>
