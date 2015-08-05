@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Web.Security;
 using System.Windows.Forms;
 
 namespace FinPersonales
@@ -78,6 +79,10 @@ namespace FinPersonales
             this.transaccionesTableAdapter.FillByPerUser(this.finPersonalesDataSet.Transacciones, userId);
             this.detalleUsuariosTableAdapter.FillByPerUser(this.finPersonalesDataSet.DetalleUsuarios, userId);
             this.lblUserName.Text = nombreLabel1.Text;
+            if (!Roles.IsUserInRole(userSingleton.getIntance()._userName, "Administrator"))
+            {
+                this.administraciónToolStripMenuItem.Visible = false;
+            }
             
         }
 
@@ -92,6 +97,13 @@ namespace FinPersonales
             {
                 frmHome_Load(null, null);
             }
+        }
+
+        private void datosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserDetail frmUserDetailI = new frmUserDetail();
+            DialogResult result = frmUserDetailI.ShowDialog();
+            Refresh(result);
         }
 
     }
