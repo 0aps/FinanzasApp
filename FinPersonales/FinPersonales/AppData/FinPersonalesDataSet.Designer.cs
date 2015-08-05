@@ -8955,10 +8955,10 @@ namespace FinPersonales.AppData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TransaccionesRow AddTransaccionesRow(int No, TipoTransaccionRow parentTipoTransaccionRowByFK_Transacciones_TipoTransaccion, aspnet_UsersRow parentaspnet_UsersRowByFK_Transacciones_aspnet_Users, TipoPagoRow parentTipoPagoRowByFK_Transacciones_TipoPago, System.DateTime FechaTransaccion, System.DateTime FechaRegistrada, decimal Monto, string Comentario, bool Estado, int RefId) {
+            public TransaccionesRow AddTransaccionesRow(TipoTransaccionRow parentTipoTransaccionRowByFK_Transacciones_TipoTransaccion, aspnet_UsersRow parentaspnet_UsersRowByFK_Transacciones_aspnet_Users, TipoPagoRow parentTipoPagoRowByFK_Transacciones_TipoPago, System.DateTime FechaTransaccion, System.DateTime FechaRegistrada, decimal Monto, string Comentario, bool Estado, int RefId) {
                 TransaccionesRow rowTransaccionesRow = ((TransaccionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        No,
+                        null,
                         null,
                         null,
                         null,
@@ -9043,6 +9043,8 @@ namespace FinPersonales.AppData {
                 base.Columns.Add(this.columnRefId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNo}, true));
+                this.columnNo.AutoIncrement = true;
+                this.columnNo.AutoIncrementSeed = 1;
                 this.columnNo.AllowDBNull = false;
                 this.columnNo.Unique = true;
                 this.columnComentario.MaxLength = 100;
@@ -23384,7 +23386,7 @@ SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Com" +
@@ -23397,6 +23399,21 @@ SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Co
                 "    (Usuario = @Usuario)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO Transacciones
+                         (Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Comentario, Estado, RefId)
+VALUES        (@Tipo,@Usuario,@TipoPago,@FechaTransaccion,@FechaRegistrada,@Monto,@Comentario,@Estado,@RefId)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoPago", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TipoPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaTransaccion", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaTransaccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaRegistrada", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaRegistrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Monto", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "Monto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comentario", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Comentario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RefId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RefId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23811,6 +23828,78 @@ SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Co
                     bool Original_Estado, 
                     global::System.Nullable<int> Original_RefId) {
             return this.Update(Original_No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Comentario, Estado, RefId, Original_No, Original_Tipo, Original_Usuario, Original_TipoPago, Original_FechaTransaccion, Original_FechaRegistrada, Original_Monto, Original_Comentario, Original_Estado, Original_RefId);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertSingle(global::System.Nullable<int> Tipo, global::System.Nullable<global::System.Guid> Usuario, global::System.Nullable<int> TipoPago, string FechaTransaccion, string FechaRegistrada, global::System.Nullable<decimal> Monto, string Comentario, bool Estado, global::System.Nullable<int> RefId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Tipo.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(Tipo.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Usuario.HasValue == true)) {
+                command.Parameters[1].Value = ((System.Guid)(Usuario.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((TipoPago.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(TipoPago.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((FechaTransaccion == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(FechaTransaccion));
+            }
+            if ((FechaRegistrada == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(FechaRegistrada));
+            }
+            if ((Monto.HasValue == true)) {
+                command.Parameters[5].Value = ((decimal)(Monto.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Comentario == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Comentario));
+            }
+            command.Parameters[7].Value = ((bool)(Estado));
+            if ((RefId.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(RefId.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

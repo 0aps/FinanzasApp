@@ -113,5 +113,12 @@ namespace FinPersonales
             Refresh(result);
         }
 
+        private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddOutCome frmAddOutComeI = new frmAddOutCome();
+            DialogResult result = frmAddOutComeI.ShowDialog();
+            Refresh(result);
+        }
+
     }
 }

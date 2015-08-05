@@ -122,6 +122,12 @@
     <Compile Include="AppForm\Client\frmAddIncome.Designer.cs">
       <DependentUpon>frmAddIncome.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\Client\frmAddOutCome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\Client\frmAddOutCome.Designer.cs">
+      <DependentUpon>frmAddOutCome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForm\Managment\Role\frmRoleManagment.resx">
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\Client\frmAddIncome.resx">
       <DependentUpon>frmAddIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\Client\frmAddOutCome.resx">
+      <DependentUpon>frmAddOutCome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

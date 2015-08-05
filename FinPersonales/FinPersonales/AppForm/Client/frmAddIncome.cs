@@ -32,6 +32,24 @@ namespace FinPersonales
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            String todayDate = DateTime.Today.ToString("MM'/'dd'/'yyyy HH':'mm':'ss");
+            Decimal amount =  Decimal.Parse(txtAmount.Text);
+ 
+            transaccionesTableAdapter.InsertSingle(1, userSingleton.getIntance()._Id, 1, todayDate, todayDate, amount, txtComment.Text, true, 0);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

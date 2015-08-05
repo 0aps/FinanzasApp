@@ -218,6 +218,7 @@
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
             this.egresosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
+            this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // serviciosToolStripMenuItem1
             // 
