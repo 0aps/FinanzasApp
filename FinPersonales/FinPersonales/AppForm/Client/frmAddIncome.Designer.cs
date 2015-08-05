@@ -99,7 +99,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(383, 316);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+
             // 
             // label5
             // 
@@ -209,7 +209,6 @@
             this.label2.Size = new System.Drawing.Size(179, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Registrar Ingresos";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCancel
             // 

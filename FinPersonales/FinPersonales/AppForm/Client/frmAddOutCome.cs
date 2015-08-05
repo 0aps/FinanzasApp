@@ -13,10 +13,12 @@ namespace FinPersonales
     public partial class frmAddOutCome : Form
     {
         private TransaccionesTableAdapter transaccionesTableAdapter;
+        private EgresosTableAdapter egresosTableAdapter;
 
         public frmAddOutCome()
         {
             transaccionesTableAdapter = new TransaccionesTableAdapter();
+            egresosTableAdapter = new EgresosTableAdapter();
             InitializeComponent();
         }
 
@@ -35,8 +37,10 @@ namespace FinPersonales
         {
             String todayDate = DateTime.Today.ToString("MM'/'dd'/'yyyy HH':'mm':'ss");
             Decimal amount = Decimal.Parse(txtAmount.Text);
+            egresosTableAdapter.InsertSingle((int)cbTypeOutCome.SelectedValue, (int)cbCategory.SelectedValue, "", true);
+            int RefId = Int32.Parse(egresosTableAdapter.GetDataSingle().Rows[0][0].ToString());
 
-            transaccionesTableAdapter.InsertSingle(2, userSingleton.getIntance()._Id, 2, todayDate, todayDate, amount, txtComment.Text, true, 0);
+            transaccionesTableAdapter.InsertSingle(2, userSingleton.getIntance()._Id, 2, todayDate, todayDate, amount, txtComment.Text, true, RefId);
         
         }
     }

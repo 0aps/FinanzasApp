@@ -13,9 +13,11 @@ namespace FinPersonales
     public partial class frmAddIncome : Form
     {
         private TransaccionesTableAdapter transaccionesTableAdapter;
+        private IngresosTableAdapter ingresosTableAdapter;
         public frmAddIncome()
         {
             transaccionesTableAdapter = new TransaccionesTableAdapter();
+            ingresosTableAdapter = new IngresosTableAdapter();
             InitializeComponent();
         }
 
@@ -34,23 +36,19 @@ namespace FinPersonales
         {
             String todayDate = DateTime.Today.ToString("MM'/'dd'/'yyyy HH':'mm':'ss");
             Decimal amount =  Decimal.Parse(txtAmount.Text);
- 
-            transaccionesTableAdapter.InsertSingle(1, userSingleton.getIntance()._Id, 1, todayDate, todayDate, amount, txtComment.Text, true, 0);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
+            int typeOfIncome =  (int)cbTypeOfIncome.SelectedValue;
+            int whoPays = (int)cbTypeOfPay.SelectedValue;
+            ingresosTableAdapter.InsertSingle(typeOfIncome,"", whoPays,true);
+            int RefId = Int32.Parse(ingresosTableAdapter.GetDataSingle().Rows[0][0].ToString());
+            transaccionesTableAdapter.InsertSingle(1, userSingleton.getIntance()._Id, 1, todayDate, todayDate, amount, txtComment.Text, true, RefId);
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

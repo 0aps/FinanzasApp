@@ -6180,10 +6180,10 @@ namespace FinPersonales.AppData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EgresosRow AddEgresosRow(int Id, TiposEgresosRow parentTiposEgresosRowByFK_Egresos_TiposEgresos, CategoriaEgresosRow parentCategoriaEgresosRowByFK_Egresos_CategoriaEgresos, string Descripcion, bool Estado) {
+            public EgresosRow AddEgresosRow(TiposEgresosRow parentTiposEgresosRowByFK_Egresos_TiposEgresos, CategoriaEgresosRow parentCategoriaEgresosRowByFK_Egresos_CategoriaEgresos, string Descripcion, bool Estado) {
                 EgresosRow rowEgresosRow = ((EgresosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         null,
                         null,
                         Descripcion,
@@ -6245,6 +6245,8 @@ namespace FinPersonales.AppData {
                 base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnDescripcion.MaxLength = 100;
@@ -6501,10 +6503,10 @@ namespace FinPersonales.AppData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IngresosRow AddIngresosRow(int Id, TipoIngresosRow parentTipoIngresosRowByFK_Ingresos_TipoIngresos, string Descripcion, QuienPagaRow parentQuienPagaRowByFK_Ingresos_QuienPaga1, bool Estado) {
+            public IngresosRow AddIngresosRow(TipoIngresosRow parentTipoIngresosRowByFK_Ingresos_TipoIngresos, string Descripcion, QuienPagaRow parentQuienPagaRowByFK_Ingresos_QuienPaga1, bool Estado) {
                 IngresosRow rowIngresosRow = ((IngresosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         null,
                         Descripcion,
                         null,
@@ -6566,6 +6568,8 @@ namespace FinPersonales.AppData {
                 base.Columns.Add(this.columnEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnDescripcion.MaxLength = 100;
@@ -19720,11 +19724,25 @@ SELECT Id, TipoEgresos, Categoria, Descripcion, Estado FROM Egresos WHERE (Id = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, TipoEgresos, Categoria, Descripcion, Estado FROM dbo.Egresos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        TOP (1) Id, TipoEgresos, Categoria, Descripcion, Estado\r\nFROM      " +
+                "      Egresos\r\nORDER BY Id DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Egresos] ( [TipoEgresos], [Categoria], [Descripcion], [Estado]" +
+                ") VALUES ( @TipoEgresos, @Categoria, @Descripcion, @Estado);";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoEgresos", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TipoEgresos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoria", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19746,6 +19764,17 @@ SELECT Id, TipoEgresos, Categoria, Descripcion, Estado FROM Egresos WHERE (Id = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual FinPersonalesDataSet.EgresosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            FinPersonalesDataSet.EgresosDataTable dataTable = new FinPersonalesDataSet.EgresosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FinPersonalesDataSet.EgresosDataTable GetDataSingle() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             FinPersonalesDataSet.EgresosDataTable dataTable = new FinPersonalesDataSet.EgresosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -19966,6 +19995,53 @@ SELECT Id, TipoEgresos, Categoria, Descripcion, Estado FROM Egresos WHERE (Id = 
         public virtual int Update(global::System.Nullable<int> TipoEgresos, global::System.Nullable<int> Categoria, string Descripcion, global::System.Nullable<bool> Estado, int Original_Id, global::System.Nullable<int> Original_TipoEgresos, global::System.Nullable<int> Original_Categoria, string Original_Descripcion, global::System.Nullable<bool> Original_Estado) {
             return this.Update(Original_Id, TipoEgresos, Categoria, Descripcion, Estado, Original_Id, Original_TipoEgresos, Original_Categoria, Original_Descripcion, Original_Estado);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertSingle(global::System.Nullable<int> TipoEgresos, global::System.Nullable<int> Categoria, string Descripcion, global::System.Nullable<bool> Estado) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((TipoEgresos.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(TipoEgresos.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Categoria.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Categoria.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Descripcion == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Descripcion));
+            }
+            if ((Estado.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(Estado.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -20151,11 +20227,25 @@ SELECT Id, TipoIngresos, Descripcion, QuienPaga, Estado FROM Ingresos WHERE (Id 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, TipoIngresos, Descripcion, QuienPaga, Estado FROM dbo.Ingresos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        TOP (1) Id, TipoIngresos, Descripcion, QuienPaga, Estado\r\nFROM     " +
+                "       Ingresos\r\nORDER BY Id DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Ingresos] ([TipoIngresos], [Descripcion], [QuienPaga], [Estado" +
+                "]) VALUES ( @TipoIngresos, @Descripcion, @QuienPaga, @Estado);";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoIngresos", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TipoIngresos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuienPaga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "QuienPaga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20177,6 +20267,17 @@ SELECT Id, TipoIngresos, Descripcion, QuienPaga, Estado FROM Ingresos WHERE (Id 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual FinPersonalesDataSet.IngresosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            FinPersonalesDataSet.IngresosDataTable dataTable = new FinPersonalesDataSet.IngresosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FinPersonalesDataSet.IngresosDataTable GetDataSingle() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             FinPersonalesDataSet.IngresosDataTable dataTable = new FinPersonalesDataSet.IngresosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -20396,6 +20497,53 @@ SELECT Id, TipoIngresos, Descripcion, QuienPaga, Estado FROM Ingresos WHERE (Id 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> TipoIngresos, string Descripcion, global::System.Nullable<int> QuienPaga, global::System.Nullable<bool> Estado, int Original_Id, global::System.Nullable<int> Original_TipoIngresos, string Original_Descripcion, global::System.Nullable<int> Original_QuienPaga, global::System.Nullable<bool> Original_Estado) {
             return this.Update(Original_Id, TipoIngresos, Descripcion, QuienPaga, Estado, Original_Id, Original_TipoIngresos, Original_Descripcion, Original_QuienPaga, Original_Estado);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertSingle(global::System.Nullable<int> TipoIngresos, string Descripcion, global::System.Nullable<int> QuienPaga, global::System.Nullable<bool> Estado) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((TipoIngresos.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(TipoIngresos.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Descripcion == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Descripcion));
+            }
+            if ((QuienPaga.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(QuienPaga.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Estado.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(Estado.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

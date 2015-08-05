@@ -72,9 +72,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(39, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 24);
+            this.label2.Size = new System.Drawing.Size(176, 24);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Registrar Ingresos";
+            this.label2.Text = "Registrar Egresos";
             // 
             // btnRegister
             // 
