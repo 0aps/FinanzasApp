@@ -80,6 +80,19 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transaccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.servicioDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.cuentasDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,20 +114,7 @@
             this.detalleUsuariosTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.DetalleUsuariosTableAdapter();
             this.tipoPersonaTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TipoPersonaTableAdapter();
             this.cuentasTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.CuentasTableAdapter();
-            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicioTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.ServicioTableAdapter();
-            this.servicioDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             limiteEgresosLabel = new System.Windows.Forms.Label();
@@ -133,11 +133,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoPagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionesBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -209,19 +209,20 @@
             // ingresarToolStripMenuItem
             // 
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresos";
+            this.ingresarToolStripMenuItem.Click += new System.EventHandler(this.ingresarToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             // 
             // serviciosToolStripMenuItem1
             // 
             this.serviciosToolStripMenuItem1.Name = "serviciosToolStripMenuItem1";
-            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.serviciosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.serviciosToolStripMenuItem1.Text = "Servicios";
             // 
             // cuentaToolStripMenuItem
@@ -583,6 +584,113 @@
             this.panel3.Size = new System.Drawing.Size(260, 244);
             this.panel3.TabIndex = 14;
             // 
+            // servicioDataGridView
+            // 
+            this.servicioDataGridView.AllowUserToAddRows = false;
+            this.servicioDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.servicioDataGridView.AutoGenerateColumns = false;
+            this.servicioDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.servicioDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.servicioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewCheckBoxColumn3});
+            this.servicioDataGridView.DataSource = this.servicioBindingSource;
+            this.servicioDataGridView.Location = new System.Drawing.Point(16, 22);
+            this.servicioDataGridView.Name = "servicioDataGridView";
+            this.servicioDataGridView.Size = new System.Drawing.Size(226, 203);
+            this.servicioDataGridView.TabIndex = 19;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Descripción";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "idUsuario";
+            this.dataGridViewTextBoxColumn15.HeaderText = "idUsuario";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Año";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Año";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Mes";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Mes";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "FechaCorte";
+            this.dataGridViewTextBoxColumn18.HeaderText = "FechaCorte";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "BalanceInicial";
+            this.dataGridViewTextBoxColumn19.HeaderText = "BalanceInicial";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "TotalIngresos";
+            this.dataGridViewTextBoxColumn20.HeaderText = "TotalIngresos";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "TotalEgresos";
+            this.dataGridViewTextBoxColumn21.HeaderText = "TotalEgresos";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "BalanceCorte";
+            this.dataGridViewTextBoxColumn22.HeaderText = "BalanceCorte";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Estado";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Visible = false;
+            // 
+            // servicioBindingSource
+            // 
+            this.servicioBindingSource.DataMember = "Servicio";
+            this.servicioBindingSource.DataSource = this.finPersonalesDataSet;
+            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -758,116 +866,9 @@
             // 
             this.cuentasTableAdapter.ClearBeforeFill = true;
             // 
-            // servicioBindingSource
-            // 
-            this.servicioBindingSource.DataMember = "Servicio";
-            this.servicioBindingSource.DataSource = this.finPersonalesDataSet;
-            // 
             // servicioTableAdapter
             // 
             this.servicioTableAdapter.ClearBeforeFill = true;
-            // 
-            // servicioDataGridView
-            // 
-            this.servicioDataGridView.AllowUserToAddRows = false;
-            this.servicioDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.servicioDataGridView.AutoGenerateColumns = false;
-            this.servicioDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.servicioDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.servicioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewCheckBoxColumn3});
-            this.servicioDataGridView.DataSource = this.servicioBindingSource;
-            this.servicioDataGridView.Location = new System.Drawing.Point(16, 22);
-            this.servicioDataGridView.Name = "servicioDataGridView";
-            this.servicioDataGridView.Size = new System.Drawing.Size(226, 203);
-            this.servicioDataGridView.TabIndex = 19;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Descripción";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "idUsuario";
-            this.dataGridViewTextBoxColumn15.HeaderText = "idUsuario";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Año";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Año";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Mes";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Mes";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "FechaCorte";
-            this.dataGridViewTextBoxColumn18.HeaderText = "FechaCorte";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "BalanceInicial";
-            this.dataGridViewTextBoxColumn19.HeaderText = "BalanceInicial";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "TotalIngresos";
-            this.dataGridViewTextBoxColumn20.HeaderText = "TotalIngresos";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "TotalEgresos";
-            this.dataGridViewTextBoxColumn21.HeaderText = "TotalEgresos";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "BalanceCorte";
-            this.dataGridViewTextBoxColumn22.HeaderText = "BalanceCorte";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Estado";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Visible = false;
             // 
             // frmHome
             // 
@@ -906,11 +907,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoPagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionesBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.servicioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cuentasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -79,10 +79,10 @@ namespace FinPersonales
             this.transaccionesTableAdapter.FillByPerUser(this.finPersonalesDataSet.Transacciones, userId);
             this.detalleUsuariosTableAdapter.FillByPerUser(this.finPersonalesDataSet.DetalleUsuarios, userId);
             this.lblUserName.Text = nombreLabel1.Text;
-            if (!Roles.IsUserInRole(userSingleton.getIntance()._userName, "Administrator"))
-            {
-                this.administraciónToolStripMenuItem.Visible = false;
-            }
+          //  if (!Roles.IsUserInRole(userSingleton.getIntance()._userName, "Administrator"))
+           // {
+            //    this.administraciónToolStripMenuItem.Visible = false;
+            //}
             
         }
 
@@ -103,6 +103,13 @@ namespace FinPersonales
         {
             frmUserDetail frmUserDetailI = new frmUserDetail();
             DialogResult result = frmUserDetailI.ShowDialog();
+            Refresh(result);
+        }
+
+        private void ingresarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddIncome frmAddIncomeI = new frmAddIncome();
+            DialogResult result = frmAddIncomeI.ShowDialog();
             Refresh(result);
         }
 
