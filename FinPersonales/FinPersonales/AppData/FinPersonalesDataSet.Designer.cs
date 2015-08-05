@@ -23024,12 +23024,19 @@ SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Com" +
                 "entario, Estado, RefId FROM dbo.Transacciones";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        TOP (10) No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegist" +
+                "rada, Monto, Comentario, Estado, RefId\r\nFROM            Transacciones\r\nWHERE    " +
+                "    (Usuario = @Usuario)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, "Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23054,6 +23061,25 @@ SELECT No, Tipo, Usuario, TipoPago, FechaTransaccion, FechaRegistrada, Monto, Co
             FinPersonalesDataSet.TransaccionesDataTable dataTable = new FinPersonalesDataSet.TransaccionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPerUser(FinPersonalesDataSet.TransaccionesDataTable dataTable, global::System.Nullable<global::System.Guid> Usuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Usuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.Guid)(Usuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

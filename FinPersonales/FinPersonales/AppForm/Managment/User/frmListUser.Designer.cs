@@ -46,6 +46,7 @@
             System.Windows.Forms.Label estadoLabel;
             System.Windows.Forms.Label fotoPerfilLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListUser));
+            System.Windows.Forms.Label label3;
             this.finPersonalesDataSet = new FinPersonales.AppData.FinPersonalesDataSet();
             this.aspnet_UsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aspnet_UsersTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.aspnet_UsersTableAdapter();
@@ -53,21 +54,30 @@
             this.aspnet_MembershipTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.aspnet_MembershipTableAdapter();
             this.detalleUsuariosTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.DetalleUsuariosTableAdapter();
             this.aspnet_UsersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aspnet_UsersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.userIdTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.lastActivityDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.aspnet_MembershipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.createDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lastLoginDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lastPasswordChangedDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.failedPasswordAttemptCountTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.detalleUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.limiteEgresosTextBox = new System.Windows.Forms.TextBox();
@@ -76,19 +86,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fotoPerfilPictureBox = new System.Windows.Forms.PictureBox();
             this.lblPanelDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPassword = new System.Windows.Forms.Button();
-            this.aspnet_MembershipBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fotoPerfilPictureBox = new System.Windows.Forms.PictureBox();
-            this.detalleUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.aspnet_UsersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.chckLockState = new System.Windows.Forms.CheckBox();
+            this.btnLockState = new System.Windows.Forms.Button();
             userIdLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             lastActivityDateLabel = new System.Windows.Forms.Label();
@@ -105,15 +108,16 @@
             tipoPersonaLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             fotoPerfilLabel = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.finPersonalesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aspnet_UsersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aspnet_UsersBindingNavigator)).BeginInit();
             this.aspnet_UsersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aspnet_MembershipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleUsuariosBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aspnet_MembershipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfilPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleUsuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // userIdLabel
@@ -342,12 +346,48 @@
             this.aspnet_UsersBindingNavigator.TabIndex = 0;
             this.aspnet_UsersBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
@@ -368,10 +408,37 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // aspnet_UsersBindingNavigatorSaveItem
+            // 
+            this.aspnet_UsersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.aspnet_UsersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("aspnet_UsersBindingNavigatorSaveItem.Image")));
+            this.aspnet_UsersBindingNavigatorSaveItem.Name = "aspnet_UsersBindingNavigatorSaveItem";
+            this.aspnet_UsersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.aspnet_UsersBindingNavigatorSaveItem.Text = "Save Data";
+            this.aspnet_UsersBindingNavigatorSaveItem.Click += new System.EventHandler(this.aspnet_UsersBindingNavigatorSaveItem_Click_1);
             // 
             // userIdTextBox
             // 
@@ -408,6 +475,11 @@
             this.passwordTextBox.ReadOnly = true;
             this.passwordTextBox.Size = new System.Drawing.Size(200, 20);
             this.passwordTextBox.TabIndex = 20;
+            // 
+            // aspnet_MembershipBindingSource
+            // 
+            this.aspnet_MembershipBindingSource.DataMember = "FK__aspnet_Me__UserI__571DF1D5";
+            this.aspnet_MembershipBindingSource.DataSource = this.aspnet_UsersBindingSource;
             // 
             // emailTextBox
             // 
@@ -461,6 +533,11 @@
             this.nombreTextBox.Size = new System.Drawing.Size(104, 20);
             this.nombreTextBox.TabIndex = 60;
             // 
+            // detalleUsuariosBindingSource
+            // 
+            this.detalleUsuariosBindingSource.DataMember = "FK_DetalleUsuarios_aspnet_Users";
+            this.detalleUsuariosBindingSource.DataSource = this.aspnet_UsersBindingSource;
+            // 
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleUsuariosBindingSource, "Apellido", true));
@@ -506,6 +583,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chckLockState);
+            this.panel1.Controls.Add(label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.fotoPerfilPictureBox);
@@ -563,6 +642,18 @@
             this.panel2.Size = new System.Drawing.Size(733, 165);
             this.panel2.TabIndex = 73;
             // 
+            // fotoPerfilPictureBox
+            // 
+            this.fotoPerfilPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fotoPerfilPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.detalleUsuariosBindingSource, "fotoPerfil", true));
+            this.fotoPerfilPictureBox.Location = new System.Drawing.Point(28, 23);
+            this.fotoPerfilPictureBox.Name = "fotoPerfilPictureBox";
+            this.fotoPerfilPictureBox.Size = new System.Drawing.Size(163, 104);
+            this.fotoPerfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPerfilPictureBox.TabIndex = 72;
+            this.fotoPerfilPictureBox.TabStop = false;
+            this.fotoPerfilPictureBox.Click += new System.EventHandler(this.fotoPerfilPictureBox_Click);
+            // 
             // lblPanelDescription
             // 
             this.lblPanelDescription.AutoSize = true;
@@ -594,96 +685,43 @@
             this.btnPassword.UseVisualStyleBackColor = true;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
-            // aspnet_MembershipBindingSource
+            // label3
             // 
-            this.aspnet_MembershipBindingSource.DataMember = "FK__aspnet_Me__UserI__571DF1D5";
-            this.aspnet_MembershipBindingSource.DataSource = this.aspnet_UsersBindingSource;
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(456, 114);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(61, 13);
+            label3.TabIndex = 77;
+            label3.Text = "Bloqueado:";
             // 
-            // fotoPerfilPictureBox
+            // chckLockState
             // 
-            this.fotoPerfilPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fotoPerfilPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.detalleUsuariosBindingSource, "fotoPerfil", true));
-            this.fotoPerfilPictureBox.Location = new System.Drawing.Point(28, 23);
-            this.fotoPerfilPictureBox.Name = "fotoPerfilPictureBox";
-            this.fotoPerfilPictureBox.Size = new System.Drawing.Size(163, 104);
-            this.fotoPerfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fotoPerfilPictureBox.TabIndex = 72;
-            this.fotoPerfilPictureBox.TabStop = false;
-            this.fotoPerfilPictureBox.Click += new System.EventHandler(this.fotoPerfilPictureBox_Click);
+            this.chckLockState.AutoSize = true;
+            this.chckLockState.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.aspnet_MembershipBindingSource, "IsLockedOut", true));
+            this.chckLockState.Enabled = false;
+            this.chckLockState.Location = new System.Drawing.Point(569, 114);
+            this.chckLockState.Name = "chckLockState";
+            this.chckLockState.Size = new System.Drawing.Size(15, 14);
+            this.chckLockState.TabIndex = 78;
+            this.chckLockState.UseVisualStyleBackColor = true;
             // 
-            // detalleUsuariosBindingSource
+            // btnLockState
             // 
-            this.detalleUsuariosBindingSource.DataMember = "FK_DetalleUsuarios_aspnet_Users";
-            this.detalleUsuariosBindingSource.DataSource = this.aspnet_UsersBindingSource;
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // aspnet_UsersBindingNavigatorSaveItem
-            // 
-            this.aspnet_UsersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.aspnet_UsersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("aspnet_UsersBindingNavigatorSaveItem.Image")));
-            this.aspnet_UsersBindingNavigatorSaveItem.Name = "aspnet_UsersBindingNavigatorSaveItem";
-            this.aspnet_UsersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.aspnet_UsersBindingNavigatorSaveItem.Text = "Save Data";
-            this.aspnet_UsersBindingNavigatorSaveItem.Click += new System.EventHandler(this.aspnet_UsersBindingNavigatorSaveItem_Click_1);
+            this.btnLockState.DataBindings.Add(new System.Windows.Forms.Binding("Visible", this.aspnet_MembershipBindingSource, "IsLockedOut", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.btnLockState.Location = new System.Drawing.Point(629, 17);
+            this.btnLockState.Name = "btnLockState";
+            this.btnLockState.Size = new System.Drawing.Size(90, 38);
+            this.btnLockState.TabIndex = 78;
+            this.btnLockState.Text = "Desbloquear";
+            this.btnLockState.UseVisualStyleBackColor = true;
+            this.btnLockState.Click += new System.EventHandler(this.btnLockState_Click);
             // 
             // frmListUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 465);
+            this.Controls.Add(this.btnLockState);
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPanelDescription);
@@ -697,13 +735,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.aspnet_UsersBindingNavigator)).EndInit();
             this.aspnet_UsersBindingNavigator.ResumeLayout(false);
             this.aspnet_UsersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aspnet_MembershipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleUsuariosBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aspnet_MembershipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfilPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleUsuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,6 +792,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPassword;
+        private System.Windows.Forms.CheckBox chckLockState;
+        private System.Windows.Forms.Button btnLockState;
 
 
     }

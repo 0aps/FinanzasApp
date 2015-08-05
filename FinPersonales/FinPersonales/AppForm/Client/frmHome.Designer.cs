@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,6 +37,7 @@
             this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,13 +46,28 @@
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeContenidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.transaccionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tipoTransaccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finPersonalesDataSet = new FinPersonales.AppData.FinPersonalesDataSet();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.aspnetUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tipoPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transaccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -58,8 +75,20 @@
             this.lblActiveAccount = new System.Windows.Forms.Label();
             this.lblServices = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.transaccionesTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TransaccionesTableAdapter();
+            this.tableAdapterManager = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TableAdapterManager();
+            this.tipoTransaccionTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TipoTransaccionTableAdapter();
+            this.aspnet_UsersTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.aspnet_UsersTableAdapter();
+            this.tipoPagoTableAdapter = new FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TipoPagoTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoTransaccionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finPersonalesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aspnetUsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoPagoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -128,6 +157,12 @@
             this.listarServiciosToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.listarServiciosToolStripMenuItem.Text = "Listar Servicios";
             // 
+            // listarCuentasToolStripMenuItem
+            // 
+            this.listarCuentasToolStripMenuItem.Name = "listarCuentasToolStripMenuItem";
+            this.listarCuentasToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.listarCuentasToolStripMenuItem.Text = "Listar Cuentas";
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -188,24 +223,18 @@
             this.gestiónDeRolesToolStripMenuItem.Text = "Gestión de Roles";
             this.gestiónDeRolesToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeRolesToolStripMenuItem_Click);
             // 
+            // gestiónDeContenidoToolStripMenuItem
+            // 
+            this.gestiónDeContenidoToolStripMenuItem.Name = "gestiónDeContenidoToolStripMenuItem";
+            this.gestiónDeContenidoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.gestiónDeContenidoToolStripMenuItem.Text = "Gestión de Contenido";
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // listarCuentasToolStripMenuItem
-            // 
-            this.listarCuentasToolStripMenuItem.Name = "listarCuentasToolStripMenuItem";
-            this.listarCuentasToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.listarCuentasToolStripMenuItem.Text = "Listar Cuentas";
-            // 
-            // gestiónDeContenidoToolStripMenuItem
-            // 
-            this.gestiónDeContenidoToolStripMenuItem.Name = "gestiónDeContenidoToolStripMenuItem";
-            this.gestiónDeContenidoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.gestiónDeContenidoToolStripMenuItem.Text = "Gestión de Contenido";
             // 
             // pictureBox1
             // 
@@ -231,6 +260,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 98);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 244);
@@ -238,13 +268,151 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.transaccionesDataGridView);
             this.panel2.Location = new System.Drawing.Point(12, 360);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(780, 203);
+            this.panel2.Size = new System.Drawing.Size(780, 276);
             this.panel2.TabIndex = 14;
+            // 
+            // transaccionesDataGridView
+            // 
+            this.transaccionesDataGridView.AllowUserToAddRows = false;
+            this.transaccionesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.transaccionesDataGridView.AutoGenerateColumns = false;
+            this.transaccionesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.transaccionesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.transaccionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transaccionesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn9});
+            this.transaccionesDataGridView.DataSource = this.transaccionesBindingSource;
+            this.transaccionesDataGridView.Location = new System.Drawing.Point(16, 36);
+            this.transaccionesDataGridView.Name = "transaccionesDataGridView";
+            this.transaccionesDataGridView.Size = new System.Drawing.Size(746, 220);
+            this.transaccionesDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Tipo";
+            this.dataGridViewTextBoxColumn2.DataSource = this.tipoTransaccionBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "Desripcion";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "id";
+            // 
+            // tipoTransaccionBindingSource
+            // 
+            this.tipoTransaccionBindingSource.DataMember = "TipoTransaccion";
+            this.tipoTransaccionBindingSource.DataSource = this.finPersonalesDataSet;
+            // 
+            // finPersonalesDataSet
+            // 
+            this.finPersonalesDataSet.DataSetName = "FinPersonalesDataSet";
+            this.finPersonalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Usuario";
+            this.dataGridViewTextBoxColumn3.DataSource = this.aspnetUsersBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "UserName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Usuario";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "UserId";
+            // 
+            // aspnetUsersBindingSource
+            // 
+            this.aspnetUsersBindingSource.DataMember = "aspnet_Users";
+            this.aspnetUsersBindingSource.DataSource = this.finPersonalesDataSet;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipoPago";
+            this.dataGridViewTextBoxColumn4.DataSource = this.tipoPagoBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "Descripcion";
+            this.dataGridViewTextBoxColumn4.HeaderText = "TipoPago";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "Id";
+            // 
+            // tipoPagoBindingSource
+            // 
+            this.tipoPagoBindingSource.DataMember = "TipoPago";
+            this.tipoPagoBindingSource.DataSource = this.finPersonalesDataSet;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaTransaccion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "FechaTransaccion";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "FechaRegistrada";
+            this.dataGridViewTextBoxColumn6.HeaderText = "FechaRegistrada";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Monto";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Monto";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Comentario";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Comentario";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Estado";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "RefId";
+            this.dataGridViewTextBoxColumn9.HeaderText = "RefId";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // transaccionesBindingSource
+            // 
+            this.transaccionesBindingSource.DataMember = "Transacciones";
+            this.transaccionesBindingSource.DataSource = this.finPersonalesDataSet;
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(532, 98);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(260, 244);
@@ -252,6 +420,7 @@
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Location = new System.Drawing.Point(324, 98);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(184, 244);
@@ -307,11 +476,57 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Últimas Transacciones";
             // 
+            // transaccionesTableAdapter
+            // 
+            this.transaccionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.aspnet_ApplicationsTableAdapter = null;
+            this.tableAdapterManager.aspnet_MembershipTableAdapter = null;
+            this.tableAdapterManager.aspnet_PathsTableAdapter = null;
+            this.tableAdapterManager.aspnet_PersonalizationAllUsersTableAdapter = null;
+            this.tableAdapterManager.aspnet_PersonalizationPerUserTableAdapter = null;
+            this.tableAdapterManager.aspnet_ProfileTableAdapter = null;
+            this.tableAdapterManager.aspnet_RolesTableAdapter = null;
+            this.tableAdapterManager.aspnet_SchemaVersionsTableAdapter = null;
+            this.tableAdapterManager.aspnet_UsersInRolesTableAdapter = null;
+            this.tableAdapterManager.aspnet_UsersTableAdapter = null;
+            this.tableAdapterManager.aspnet_WebEvent_EventsTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaEgresosTableAdapter = null;
+            this.tableAdapterManager.CuentasTableAdapter = null;
+            this.tableAdapterManager.DetalleUsuariosTableAdapter = null;
+            this.tableAdapterManager.EgresosTableAdapter = null;
+            this.tableAdapterManager.IngresosTableAdapter = null;
+            this.tableAdapterManager.QuienPagaTableAdapter = null;
+            this.tableAdapterManager.ServicioTableAdapter = null;
+            this.tableAdapterManager.TipoIngresosTableAdapter = null;
+            this.tableAdapterManager.TipoPagoTableAdapter = null;
+            this.tableAdapterManager.TipoPersonaTableAdapter = null;
+            this.tableAdapterManager.TiposEgresosTableAdapter = null;
+            this.tableAdapterManager.TipoTransaccionTableAdapter = null;
+            this.tableAdapterManager.TransaccionesTableAdapter = this.transaccionesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = FinPersonales.AppData.FinPersonalesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioCuentasTableAdapter = null;
+            // 
+            // tipoTransaccionTableAdapter
+            // 
+            this.tipoTransaccionTableAdapter.ClearBeforeFill = true;
+            // 
+            // aspnet_UsersTableAdapter
+            // 
+            this.aspnet_UsersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipoPagoTableAdapter
+            // 
+            this.tipoPagoTableAdapter.ClearBeforeFill = true;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 575);
+            this.ClientSize = new System.Drawing.Size(804, 636);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblServices);
             this.Controls.Add(this.lblActiveAccount);
@@ -326,9 +541,17 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmHome";
             this.Text = "Finanzas Personales - Inicio";
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoTransaccionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finPersonalesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aspnetUsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoPagoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transaccionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +589,26 @@
         private System.Windows.Forms.Label lblActiveAccount;
         private System.Windows.Forms.Label lblServices;
         private System.Windows.Forms.Label label2;
+        private AppData.FinPersonalesDataSet finPersonalesDataSet;
+        private System.Windows.Forms.BindingSource transaccionesBindingSource;
+        private AppData.FinPersonalesDataSetTableAdapters.TransaccionesTableAdapter transaccionesTableAdapter;
+        private AppData.FinPersonalesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView transaccionesDataGridView;
+        private System.Windows.Forms.BindingSource tipoTransaccionBindingSource;
+        private AppData.FinPersonalesDataSetTableAdapters.TipoTransaccionTableAdapter tipoTransaccionTableAdapter;
+        private System.Windows.Forms.BindingSource aspnetUsersBindingSource;
+        private AppData.FinPersonalesDataSetTableAdapters.aspnet_UsersTableAdapter aspnet_UsersTableAdapter;
+        private System.Windows.Forms.BindingSource tipoPagoBindingSource;
+        private AppData.FinPersonalesDataSetTableAdapters.TipoPagoTableAdapter tipoPagoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

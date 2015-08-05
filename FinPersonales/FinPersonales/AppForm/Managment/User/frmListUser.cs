@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web.Security;
 using System.Windows.Forms;
 
 namespace FinPersonales
@@ -61,6 +62,7 @@ namespace FinPersonales
             }
             bindingNavigatorDeleteItem.Enabled = false;
             bindingNavigatorAddNewItem.Enabled = false;
+
         }
 
         private void fotoPerfilPictureBox_Click(object sender, EventArgs e)
@@ -94,6 +96,13 @@ namespace FinPersonales
             frmChangePasswordI.ShowDialog();
             this.aspnet_MembershipTableAdapter.Fill(this.finPersonalesDataSet.aspnet_Membership);
          
+        }
+
+        private void btnLockState_Click(object sender, EventArgs e)
+        {
+            MembershipUser usr = Membership.GetUser(userNameTextBox.Text);
+            usr.UnlockUser();
+            this.aspnet_MembershipTableAdapter.Fill(this.finPersonalesDataSet.aspnet_Membership);
         }
 
     }
